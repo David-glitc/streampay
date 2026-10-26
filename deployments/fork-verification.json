@@ -1,0 +1,9 @@
+{
+  "localOnly": true,
+  "chainId": 677,
+  "checkedAt": "2026-10-26T16:32:46.275Z",
+  "streampay": {
+    "flow": "create BOT stream → cancel",
+    "settled": "0"
+  }
+}
