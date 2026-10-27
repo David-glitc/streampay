@@ -1,32 +1,32 @@
-# Streampay
+# Tickpay
 
-**Pay by the second.** Stream BOT or USDT to anyone by the second. Either side can cancel; earned funds go to the recipient, the rest returns.
+**Every second, paid.** Payroll by the second in USDT or BOT. Stream to one wallet or up to 50 in one transaction; either side can cancel fairly.
 
 **Status:** contracts are tested on a BOT Chain mainnet fork; the mainnet deployment is pending.
 
-- Website and app: https://streampaybot.vercel.app (app at [`/app/`](https://streampaybot.vercel.app/app/))
+- Website and app: https://tickpaybot.vercel.app (app at [`/app/`](https://tickpaybot.vercel.app/app/))
 - Network: BOT Chain mainnet, chain ID 677 · [BOT Chain](https://www.botchain.ai/) · [BOTScan](https://scan.botchain.ai/)
 
-![Streampay landing page](docs/streampay-landing-1280.png)
+![Tickpay landing page](docs/tickpay-landing-1280.png)
 
 ## How it works
 
-1. **Start a stream.** Pick a recipient, amount, token and duration, then deposit once.
+1. **Start a stream or a payroll.** Pick one recipient, or paste up to 50 wallets with amounts, choose USDT or BOT and a duration, then deposit once.
 2. **Earn every second.** The recipient's balance grows each second and can be withdrawn any time.
 3. **Cancel fairly.** Either side can stop the stream. Earned funds go to the recipient; the rest returns to the sender.
 
 ## Features
 
-- **Per-second pay.** Salaries, retainers and grants that accrue continuously.
-- **BOT and USDT.** Stream native BOT or USDT on BOT Chain.
+- **Batch payroll.** Pay a whole team in one transaction: up to 50 streams sharing one token and schedule.
+- **USDT or BOT.** Stream stable USDT salaries or native BOT on BOT Chain.
 - **Fair cancellation.** Settlement is exact to the second, in the same transaction.
-- **No fee.** Streampay takes nothing; only BOT Chain gas.
+- **Scheduled starts.** Fund next month's payroll today; nothing accrues before the start time.
 
 ## Contracts
 
 | Contract | BOT Chain mainnet |
 |---|---|
-| `Streampay` | Pending mainnet deployment |
+| `Tickpay` | Pending mainnet deployment |
 
 BOT Chain infrastructure used: USDT `0xaBabc7Ddc03e501d190C676BF3d92ef0e6e87a3C`, WBOT `0xD5452816194a3784dBa983426cCe7c122F4abd30`, BDEX router `0x07032d47A1b9f8460cBeE9dC17c1d3E438693929`, BDEX QuoterV2 `0x034A705b36067cff99ABf5C662Be881cBd8d0176`.
 
@@ -37,15 +37,15 @@ Source: [`contracts/src`](contracts/src). Tests: [`contracts/test`](contracts/te
 Requires Node 20+, [Foundry](https://getfoundry.sh) and Python 3.
 
 ```bash
-git clone --recursive https://github.com/David-glitc/streampay.git
-cd streampay
+git clone --recursive https://github.com/David-glitc/tickpay.git
+cd tickpay
 npm ci
 npm test              # forge test
-npm run build         # landing page + app into dist/streampay
+npm run build         # landing page + app into dist/tickpay
 npm run preview       # http://127.0.0.1:8771
 ```
 
-`npm run build` writes `dist/streampay/index.html` (landing page), `dist/streampay/app/` (the dApp) and a Cloudflare Workers bundle under `sites/`.
+`npm run build` writes `dist/tickpay/index.html` (landing page), `dist/tickpay/app/` (the dApp) and a Cloudflare Workers bundle under `sites/`.
 
 ### Wallets
 

@@ -1,9 +1,10 @@
 {
   "localOnly": true,
   "chainId": 677,
-  "checkedAt": "2026-10-26T16:32:46.275Z",
-  "streampay": {
-    "flow": "create BOT stream → cancel",
-    "settled": "0"
+  "checkedAt": "2026-10-27T06:53:22.460Z",
+  "tickpay": {
+    "flow": "create BOT stream → cancel → batch payroll of 2",
+    "settled": "0",
+    "streams": "3"
   }
 }

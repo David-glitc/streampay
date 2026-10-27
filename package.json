@@ -1,5 +1,5 @@
 {
-  "name": "streampay",
+  "name": "tickpay",
   "private": true,
   "type": "module",
   "scripts": {
@@ -21,8 +21,8 @@
     "esbuild": "0.28.2",
     "@playwright/test": "1.56.1"
   },
-  "description": "Stream BOT or USDT to anyone by the second. Either side can cancel; earned funds go to the recipient, the rest returns.",
+  "description": "Payroll by the second in USDT or BOT. Stream to one wallet or up to 50 in one transaction; either side can cancel fairly.",
   "license": "MIT",
-  "repository": "https://github.com/David-glitc/streampay",
-  "homepage": "https://streampaybot.vercel.app"
+  "repository": "https://github.com/David-glitc/tickpay",
+  "homepage": "https://tickpaybot.vercel.app"
 }

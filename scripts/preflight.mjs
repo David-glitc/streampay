@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import {formatEther,parseAbi} from 'viem';
-import {root,network,publicClient,infrastructure,artifact,products,deployedNames,stringify} from './config.mjs';
+import {root,network,publicClient,infrastructure,artifact,products,deployedNames,stringify,suffix} from './config.mjs';
 const {address}=JSON.parse(fs.readFileSync(new URL('deployments/deployer.json',root)));
 if(await publicClient.getChainId()!==network.id)throw Error(`Wrong chain; expected ${network.label} (${network.id})`);
 const result={chainId:network.id,network:network.key,deployer:address,balanceBOT:formatEther(await publicClient.getBalance({address})),gasPriceWei:(await publicClient.getGasPrice()).toString(),infrastructure:{},bytecode:{}};
@@ -15,4 +15,4 @@ for(const p of products)for(const name of await deployedNames(p)){
  if(size>24576)throw Error(`${name}: runtime ${size} exceeds EIP-170`);
  result.bytecode[name]=size;
 }
-fs.writeFileSync(new URL(`deployments/preflight-${network.key}.json`,root),stringify(result));console.log(stringify(result));
+fs.writeFileSync(new URL(`deployments/preflight-${network.key}${suffix}.json`,root),stringify(result));console.log(stringify(result));

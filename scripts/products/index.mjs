@@ -1,2 +1,2 @@
-import streampay from './streampay.mjs';
-export default [streampay];
+import tickpay from './tickpay.mjs';
+export default [tickpay];
